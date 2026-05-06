@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Jeff webovky</title>
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+	<!-- Naše vlastní CSS -->
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="side-border-left">
+		<img src="masicko.svg" alt="masicko">
+		<img src="prasatko.svg" alt="prasatko">
+        <img src="zebra.svg" alt="zebra">
+        <img src="na tyckach.svg" alt="na tyckach">
+		<img src="masicko.svg" alt="masicko">
+		<img src="prasatko.svg" alt="prasatko">
+       
+	</div>
+
+
+
+	<header class="hlavicka">
+		<img class="logo" src="logo drevene.png" alt="logo">
+
+		<div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+		
+
+		<ul class="nav-links " id="navLinks">
+            <li><a href="index.html" class="active">Domů</a></li>
+            <li><a href="o nas.html">O nás</a></li>
+            <li><a href="kontakty.html">Kontakty</a></li>
+            <li><a href="doprava.html">Doprava</a></li>
+        </ul>
+		</nav>
+
+	</header>
+ 
+
+<div class="hidden">
+    <main class="container">
+        <section class="section">
+            <h2 class="section-title">Kontakty</h2>
+            <div class="billing-container">
+                <div class="billing-grid">
+                    <div class="billing-card">
+                        <div class="billing-header">
+                            <h3>Adresa</h3>
+                        </div>
+                        <div class="billing-item">
+                            <strong>BRATOMA-UH s.r.o</strong>
+                            <p>Hliněná 472</p>
+                            <p>Kunovice 686 04</p>
+                        </div>
+                    </div>
+
+                    <div class="billing-card">
+                        <div class="billing-header">
+                            <h3>Kontakty</h3>
+                        </div>
+                        <div class="billing-item">
+                            <strong>BRATOMA-UH s.r.o</strong>
+                            <p>tel. +420 776 138 325</p>
+                            <p></p>
+                        </div>
+                    </div>
+
+                    <div class="billing-card info-only">
+                        <div class="billing-header">
+                            <h3>Ostatní údaje</h3>
+                        </div>
+                        <div class="billing-item">
+                            <span>IČO:</span> <strong>09947311</strong>
+                        </div>
+                        <div class="billing-item">
+                            <span>DIČ:</span> <strong>CZ09947311</strong>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="map-full" style="margin-top: 30px;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2486.063567957965!2d17.473686376316785!3d49.03958957135723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471315a743185d1d%3A0x5302602e240d2867!2sHlin%C4%9Bn%C3%A1%20472%2C%20686%2004%20Kunovice!5e1!3m2!1scs!2scz!4v1777979336403!5m2!1scs!2scz"
+                        width="100%" height="500" style="border:0; border-radius: 16px !important; " allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+        </section>
+        </main>
+    </div>
+
+    <footer class="paticka">
+		<section id="kontakt"></section>
+			<div class="kontakty">
+  <div>Vaše spokojenost je pro nás největší odměnou.</div>
+  
+  </div>
+</footer>
+
+</div>
+</section>
+
+<script>
+
+ 
+document.querySelectorAll('.hidden').forEach(el => {
+    observer.observe(el);
+});
+</script>
+ 
+<script>
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+ 
+  window.onload = function() {
+    window.scrollTo(0, 0);
+  };
+</script>
+ 
+<script>
+function toggleMenu() {
+    const nav = document.getElementById("navLinks");
+    const hamburger = document.getElementById("hamburger");
+    nav.classList.toggle("open");
+    hamburger.classList.toggle("open");
+}
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("navLinks").classList.remove("open");
+        document.getElementById("hamburger").classList.remove("open");
+    });
+});
+</script>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        } else {
+            entry.target.classList.remove("show");
+        }
+    });
+});
+
+document.querySelectorAll('.hidden').forEach(el => {
+    observer.observe(el);
+});
+</script>
+
+<script>
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  window.onload = function() {
+    window.scrollTo(0, 0);
+  };
+</script>
+
+    </body>
+</html>

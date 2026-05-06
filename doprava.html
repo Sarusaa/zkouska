@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Jeff webovky</title>
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+	<!-- Naše vlastní CSS -->
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+	<div class="side-border-left">
+		<img src="masicko.svg" alt="masicko">
+		<img src="prasatko.svg" alt="prasatko">
+        <img src="zebra.svg" alt="zebra">
+        <img src="na tyckach.svg" alt="na tyckach">
+		
+	</div>
+
+
+
+	<header class="hlavicka">
+		<img class="logo" src="logo drevene.png" alt="logo">
+
+		<div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+		
+
+		<ul class="nav-links " id="navLinks">
+            <li><a href="index.html" class="active">Domů</a></li>
+            <li><a href="o nas.html">O nás</a></li>
+            <li><a href="kontakty.html">Kontakty</a></li>
+            <li><a href="doprava.html">Doprava</a></li>
+        </ul>
+		</nav>
+
+	</header>
+
+
+
+	<main>
+
+		<section id="doprava">
+			<div class="hidden">
+			<div class="obsah-sekce dva-sloupce">
+
+				<div class="sloupec">
+					<h2 class="nadpis-sekce">Doprava</h2>
+
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste dolorem possimus facilis quae minima autem eius consequuntur quia magnam assumenda, repudiandae commodi deleniti alias, ipsum, quisquam aliquid iusto tenetur suscipit.</p>
+
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus officia minima reiciendis beatae, quo consequatur blanditiis molestiae laborum, at porro ipsum soluta temporibus.</p>
+
+				</div>
+
+                <div class="sloupec">
+					<img class="foto" src="masino.jpg" alt="masino">
+				</div>
+                
+            </div>
+			</div>
+		</section>
+
+
+	</main>
+
+
+
+	<footer class="paticka">
+		<section id="kontakt"></section>
+			<div class="kontakty">
+  <div>Vaše spokojenost je pro nás největší odměnou.</div>
+  
+  </div>
+</footer>
+
+</div>
+</section>
+
+<script>
+
+ 
+document.querySelectorAll('.hidden').forEach(el => {
+    observer.observe(el);
+});
+</script>
+ 
+<script>
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+ 
+  window.onload = function() {
+    window.scrollTo(0, 0);
+  };
+</script>
+ 
+<script>
+function toggleMenu() {
+    const nav = document.getElementById("navLinks");
+    const hamburger = document.getElementById("hamburger");
+    nav.classList.toggle("open");
+    hamburger.classList.toggle("open");
+}
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("navLinks").classList.remove("open");
+        document.getElementById("hamburger").classList.remove("open");
+    });
+});
+</script>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        } else {
+            entry.target.classList.remove("show");
+        }
+    });
+});
+
+document.querySelectorAll('.hidden').forEach(el => {
+    observer.observe(el);
+});
+</script>
+
+<script>
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  window.onload = function() {
+    window.scrollTo(0, 0);
+  };
+</script>
+
+</body>
+</html>
+
+
